@@ -4,17 +4,13 @@ import { createClient } from "@supabase/supabase-js";
 import { WheyListing, CreatineListing } from '../index'
 
 const { REACT_APP_DATABASE_KEY, REACT_APP_DATABASE_URL } = process.env
+const supabase = createClient(REACT_APP_DATABASE_URL, REACT_APP_DATABASE_KEY);
 
 export function ListingSupplement() {
 
     const [selectedList, setSelectedList] = useState('whey')
     const [whey, setWhey] = useState([])
     const [creatine, setCreatine] = useState([])
-
-    const supabaseUrl = REACT_APP_DATABASE_URL;
-    const supabaseKey = REACT_APP_DATABASE_KEY;
-    const supabase = createClient(supabaseUrl, supabaseKey);
-    
 
     useEffect(() => {
         async function getWhey() {
