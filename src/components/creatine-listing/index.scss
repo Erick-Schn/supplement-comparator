@@ -1,0 +1,214 @@
+.creatine-listing {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* CONTROLES */
+.creatine-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  &__input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    background: #0f0f0f;
+    color: #fff;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #666;
+    }
+
+    &:focus {
+      border-color: #00d4ff;
+      outline: none;
+    }
+  }
+
+  &__select-wrapper {
+    position: relative;
+    min-width: 240px;
+
+    select {
+      width: 100%;
+      padding: 12px 40px 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #2a2a2a;
+      background: #0f0f0f;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+
+      appearance: none;
+
+      &:focus {
+        border-color: #00d4ff;
+        outline: none;
+      }
+    }
+
+    &::after {
+      content: "▾";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #777;
+      pointer-events: none;
+    }
+  }
+}
+
+/* CARD */
+.creatine-card {
+  display: grid;
+  grid-template-columns: 50px 90px 1fr 140px 110px 130px;
+
+  gap: 14px;
+  align-items: center;
+
+  padding: 16px;
+  margin-bottom: 12px;
+
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+
+  transition: 0.2s;
+
+  &:hover {
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+  }
+}
+
+/* POSIÇÃO */
+.creatine-rank {
+  font-weight: bold;
+  color: #00d4ff;
+  font-size: 16px;
+}
+
+/* IMAGEM */
+.creatine-image {
+  width: 90px;
+  height: 90px;
+  background: #0c0c0c;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+  }
+}
+
+/* INFO PRINCIPAL */
+.creatine-main {
+  &__brand {
+    font-size: 12px;
+    color: #888;
+  }
+
+  &__name {
+    font-size: 15px;
+    color: #fff;
+    margin: 4px 0 8px;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    span {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: #0f0f0f;
+      border: 1px solid #333;
+      color: #aaa;
+    }
+  }
+}
+
+/* DESTAQUE */
+.creatine-highlight {
+  text-align: center;
+
+  &__label {
+    font-size: 11px;
+    color: #777;
+  }
+
+  &__value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00d4ff;
+  }
+}
+
+/* DETALHES */
+.creatine-info {
+  font-size: 13px;
+  color: #ccc;
+
+  p {
+    margin: 2px 0;
+  }
+}
+
+/* BOTÃO */
+.creatine-action {
+  a {
+    display: block;
+    text-align: center;
+    background: #00d4ff;
+    color: #000;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.2s;
+
+    &:hover {
+      background: #00aacc;
+    }
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .creatine-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .creatine-image {
+    margin: 0 auto;
+  }
+
+  .creatine-main__meta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .creatine-controls {
+    flex-direction: column;
+
+    &__select-wrapper {
+      width: 100%;
+    }
+  }
+}
