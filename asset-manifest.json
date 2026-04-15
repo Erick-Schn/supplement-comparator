@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/supplement-comparator/static/css/main.e62f7c07.css",
+    "main.js": "/supplement-comparator/static/js/main.2ab921e3.js",
+    "index.html": "/supplement-comparator/index.html",
+    "main.e62f7c07.css.map": "/supplement-comparator/static/css/main.e62f7c07.css.map",
+    "main.2ab921e3.js.map": "/supplement-comparator/static/js/main.2ab921e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e62f7c07.css",
+    "static/js/main.2ab921e3.js"
+  ]
+}
