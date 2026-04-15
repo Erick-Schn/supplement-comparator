@@ -44,7 +44,7 @@ export function ListingSupplement() {
 
         getWhey();
         getCreatine();
-    }, []);
+    }, [supabase]);
 
     return (
         <section className='listing-component'>
