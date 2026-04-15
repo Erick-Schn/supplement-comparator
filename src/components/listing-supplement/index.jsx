@@ -11,7 +11,7 @@ export function ListingSupplement() {
     const [selectedList, setSelectedList] = useState('whey')
     const [whey, setWhey] = useState([])
     const [creatine, setCreatine] = useState([])
-
+    
     useEffect(() => {
         async function getWhey() {
             const { data, error } = await supabase
@@ -40,7 +40,7 @@ export function ListingSupplement() {
 
         getWhey();
         getCreatine();
-    }, [supabase]);
+    }, []);
 
     return (
         <section className='listing-component'>
