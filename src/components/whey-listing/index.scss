@@ -100,6 +100,7 @@
 
 @media (max-width: 768px) {
   .controls {
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 18px;
     padding: 12px;
@@ -114,6 +115,7 @@
 
     .select-wrapper {
       width: 100%;
+      max-width: none;
       min-width: 0;
     }
   }
@@ -270,10 +272,12 @@
   }
 
   .card {
-    grid-template-columns: 40px 76px minmax(0, 1fr);
+    position: relative;
+    grid-template-columns: 76px minmax(0, 1fr);
     grid-template-areas:
-      "rank image main main"
-      "highlight highlight details action";
+      "image main"
+      "highlight highlight"
+      "details action";
     gap: 10px 12px;
     padding: 14px;
     border-radius: 22px;
@@ -281,12 +285,17 @@
   }
 
   .rank {
-    grid-area: rank;
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
     margin: 0;
-    border-radius: 14px;
-    font-size: 0.88rem;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 0.72rem;
+    box-shadow: 0 6px 14px rgba(31, 70, 48, 0.12);
   }
 
   .image {
@@ -362,5 +371,66 @@
     padding: 12px 14px;
     border-radius: 16px;
     font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls {
+    padding: 10px;
+
+    input,
+    .select-wrapper select {
+      font-size: 0.86rem;
+    }
+  }
+
+  .card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .rank {
+    width: 30px;
+    height: 30px;
+    border-radius: 12px;
+    font-size: 0.68rem;
+  }
+
+  .image img {
+    width: 64px;
+    border-radius: 14px;
+  }
+
+  .main {
+    .name {
+      font-size: 0.9rem;
+    }
+  }
+
+  .details {
+    font-size: 0.74rem;
+    line-height: 1.25;
+  }
+
+  .action a {
+    padding: 11px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    grid-template-areas:
+      "image main"
+      "highlight highlight"
+      "details details"
+      "action action";
+  }
+
+  .details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 10px;
   }
 }

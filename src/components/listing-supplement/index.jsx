@@ -17,7 +17,6 @@ export function ListingSupplement() {
             const { data, error } = await supabase
                 .from("whey")
                 .select("*");
-                console.log(data)
 
             if (error) {
                 console.error("Erro:", error);
@@ -45,10 +44,20 @@ export function ListingSupplement() {
     return (
         <section className='listing-component'>
             <div className='options'>
-                <button name='whey' onClick={()=> setSelectedList('whey')}>
+                <button
+                    name='whey'
+                    className={selectedList === 'whey' ? 'is-active' : ''}
+                    aria-pressed={selectedList === 'whey'}
+                    onClick={()=> setSelectedList('whey')}
+                >
                     <span className="text">Whey</span>
                 </button>
-                <button name='creatina' onClick={()=> setSelectedList('creatina')}>
+                <button
+                    name='creatina'
+                    className={selectedList === 'creatina' ? 'is-active' : ''}
+                    aria-pressed={selectedList === 'creatina'}
+                    onClick={()=> setSelectedList('creatina')}
+                >
                     <span className="text">Creatina</span>
                 </button>
             </div>

@@ -19,7 +19,7 @@ export function Header() {
 
     return (
         <header>
-            <div className={'container ' + isScrolled ? 'scrolled' : ''}>
+            <div className={`container${isScrolled ? ' scrolled' : ''}`}>
                 <div className='header-brand'>    
                     <Dumbbell className={`text-white transition-all duration-300 ${
                         isScrolled ? 'h-6 w-6' : 'h-8 w-8'

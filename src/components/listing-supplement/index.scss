@@ -67,6 +67,21 @@
         background: rgba(12, 24, 18, 0.25);
     }
 
+    button:not(.is-active) {
+        background: transparent;
+        box-shadow: none;
+        color: #486052;
+    }
+
+    button:not(.is-active):hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    button:not(.is-active) span {
+        background: transparent;
+    }
+
     button:active {
         transform: scale(0.98);
     }
@@ -77,14 +92,33 @@
 
         .options {
             gap: 8px;
-            padding: 8px;
+            padding: 6px;
             margin-bottom: 16px;
             border-radius: 18px;
+        }
+
+        button {
+            min-height: 46px;
+            border-radius: 14px;
         }
 
         button span {
             padding: 12px 10px;
             font-size: 0.86rem;
         }
-    }   
+    }
+
+    @media (max-width: 380px) {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        .options {
+            gap: 6px;
+        }
+
+        button span {
+            padding: 11px 6px;
+            font-size: 0.8rem;
+        }
+    }
 }
